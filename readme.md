@@ -1,4 +1,4 @@
 #firgit
 #git ex1
-git ex2
-git ex3
+#git ex2
+#git ex3
