@@ -7,6 +7,10 @@ int main()
 {
 	int a = 2;
 	int b = 6;
+	
+
+	const size_t N=8;
+	int c[N] = { 0 };
 #ifndef _DEBUG
 	cout << "Debug" << endl;
 #endif
