@@ -1,12 +1,17 @@
 #include "mytest.h"
 
-void CMytest::TestOfOpenmp(const int &a){
+void CMytest::TestOfOpenmp(const int *dina,const int *dinb,int *dout,const int &size){
+	int j;
+#ifdef USE_OPENMP
 #pragma omp parallel for
-	for (int i = 0; i < a; i++)
-		cout << "i=" << i << " " << "ThreadID=" << omp_get_thread_num() << endl;
+#endif
+	for (int i = 0; i < size; i++){
+		dout[i] = dina[i] * dinb[i];
+		cout << "i*i=" << dout[i] << " " << "ThreadID=" << omp_get_thread_num() << endl;
+	}
 }
 
-void CMytest::TestOfSSE(float *op1,float *op2, float *op3,int &size){
+void CMytest::TestOfSSE(const float *op1,const float *op2, float *op3,const int &size){
 #ifdef USE_SSE
 	//cout << "SSE" << endl;
 	__m128 m1, m2, m3, m4;
@@ -27,8 +32,8 @@ void CMytest::TestOfSSE(float *op1,float *op2, float *op3,int &size){
 	}
 #else
 	float m1,m2,m3,m4;
-	float* pSrc1 = op1;
-	float* pSrc2 = op2;
+	const float* pSrc1 = op1;
+	const float* pSrc2 = op2;
 	float* pDst = op3;
 	float m0_5 = 0.5f;
 	int Loop = size;
