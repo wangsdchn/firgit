@@ -33,11 +33,11 @@ int main()
 	test1.dinb = b;
 	test1.dout = c;
 //#ifdef USE_OPENMP
-#pragma omp parallel for
+#pragma omp parallel for schedule(static,4)
 //#endif
-	for (int j = 0; j < 1000; j++){
+	for (int j = 0; j < 2000; j++){
 //		test1.TestOfOpenmp(test1.dina, test1.dinb, test1.dout, size);
-		cout << "i*i=" << j << endl;
+		cout << "i*i" << endl;
 	}
 	clock_t time2 = clock();
 	cout << (double)(time2 - time1) / CLOCKS_PER_SEC << endl;
