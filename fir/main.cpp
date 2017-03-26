@@ -1,10 +1,12 @@
 #include "mytest.h"
 #include "add.h"
 #include<time.h>
+#include<omp.h>
+#include<vector>
 using namespace cv;
 using namespace std;
 
-#define N 16
+#define N 2000
 int main()
 {
 	CMytest test1;
@@ -32,15 +34,11 @@ int main()
 	test1.dina = a;
 	test1.dinb = b;
 	test1.dout = c;
-//#ifdef USE_OPENMP
-#pragma omp parallel for schedule(static,4)
-//#endif
-	for (int j = 0; j < 2000; j++){
-//		test1.TestOfOpenmp(test1.dina, test1.dinb, test1.dout, size);
-		cout << "i*i" << endl;
-	}
+
+	test1.TestOfOpenmp(test1.dina, test1.dinb, test1.dout, size);
+
 	clock_t time2 = clock();
-	cout << (double)(time2 - time1) / CLOCKS_PER_SEC << endl;
+	cout << endl << (double)(time2 - time1) / CLOCKS_PER_SEC << endl;
 	system("pause");
 	return 0;
 }

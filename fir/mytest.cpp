@@ -2,12 +2,14 @@
 
 void CMytest::TestOfOpenmp(const int *dina,const int *dinb,int *dout,const int &size){
 	int j;
-//#ifdef USE_OPENMP
-#pragma omp parallel for schedule(static,1)
-//#endif
-	for (int i = 0; i < size; i++){
-		dout[i] = dina[i] * dinb[i];
-		cout << "i*i=" << dout[i] << " " << "ThreadID=" << omp_get_thread_num() << endl;
+#ifdef USE_OPENMP
+#pragma omp parallel for
+#endif
+	for (int j = 0; j < 200000; j++){
+		for (int i = 0; i < size; i++){
+			dout[i] = dina[i] * dinb[i];
+			//		cout << "i*i=" << dout[i] << " " << "ThreadID=" << omp_get_thread_num() << endl;
+		}
 	}
 }
 
