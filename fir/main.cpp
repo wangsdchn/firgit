@@ -3,10 +3,9 @@
 #include<time.h>
 #include<omp.h>
 #include<vector>
-using namespace cv;
 using namespace std;
 
-#define N 2000
+#define N 20
 int main()
 {
 	CMytest test1;
