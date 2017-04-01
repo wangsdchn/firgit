@@ -13,19 +13,40 @@ using namespace std;
 class CMytest
 {
 public:
-	int *dina = NULL;
-	int *dinb = NULL;
-	int *dout = NULL; 
+	int *dina;
+	int *dinb;
+	int *dout;
 	int size;
-	float *op1 = NULL;
-	float *op2 = NULL;
-	float *op3 = NULL;
+	float *op1;
+	float *op2;
+	float *op3;
 
-	CMytest(int *a = 0, int *b = 0, int *c = 0, int N = 0, float *p1 = 0, float *p2 = 0, float*p3 = 0)
+	CMytest()
 	{
-		dina = a; dinb = b; dout = c; size = N;
-		op1 = p1; op2 = p2; op3 = p3;
+		dina = new int[N];
+		memset(dina,0,sizeof(int)*N);
+		dinb = new int[N];
+		memset(dinb, 0, sizeof(int)*N);
+		dout = new int[N];
+		memset(dout, 0, sizeof(int)*N);
+		size = 0;
+		op1 = NULL;
+		op2 = NULL;
+		op3 = NULL;
 	}
+	/*CMytest(const CMytest &C)
+	{
+		dina = new int;
+		*dina = *(C.dina);
+		dinb = new int;
+		*dinb = *(C.dinb);
+		dout = new int;
+		*dout = *(C.dout);
+		size = C.size;
+		op1 = C.op1;
+		op2 = C.op2;
+		op3 = C.op3;
+	}*/
 	//openMP²âÊÔº¯Êý
 	void TestOfOpenmp(const int *dina, const int *dinb, int *dout, const int &size);
 	//SSE²âÊÔº¯Êý
@@ -33,9 +54,9 @@ public:
 
 	~CMytest()
 	{
-		if (NULL != dina) dina = NULL;
-		if (NULL != dinb) dinb = NULL;
-		if (NULL != dout) dout = NULL;
+		if (dina) { delete []dina; dina = NULL; }
+		if (dinb) { delete []dinb; dinb = NULL; }
+		if (dout) { delete []dout; dout = NULL; }
 		if (NULL != op1)  op1 = NULL;
 		if (NULL != op2)  op2 = NULL;
 		if (NULL != op3)  op3 = NULL;

@@ -1,11 +1,11 @@
 #include "mytest.h"
 #include "add.h"
+#include "define.h"
 #include<time.h>
 #include<omp.h>
 #include<vector>
 using namespace std;
 
-#define N 20
 int main()
 {
 	CMytest test1;
@@ -28,13 +28,17 @@ int main()
 		*/
 	int size = N;
 	int a[N] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
-	int b[N] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
+	int b[N] = { 5, 6, 7, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
 	int c[N] = { 0 };
-	test1.dina = a;
-	test1.dinb = b;
-	test1.dout = c;
 
-	test1.TestOfOpenmp(test1.dina, test1.dinb, test1.dout, size);
+	memcpy(test1.dina,b,sizeof(int)*N);
+	//test1.dinb = &b;
+	//test1.dout = &c;
+
+	//test1.TestOfOpenmp(test1.dina, test1.dinb, test1.dout, size);
+	//CMytest test2(test1);
+	//test1.dina = &b;
+	cout << test1.dina[1] << endl;
 
 	clock_t time2 = clock();
 	cout << endl << (double)(time2 - time1) / CLOCKS_PER_SEC << endl;
