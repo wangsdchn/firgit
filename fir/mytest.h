@@ -13,6 +13,8 @@ using namespace std;
 class CMytest
 {
 public:
+	unsigned int unRoot;
+	float sqrtNum;
 	int *dina;
 	int *dinb;
 	int *dout;
@@ -30,6 +32,8 @@ public:
 		dout = new int[N];
 		memset(dout, 0, sizeof(int)*N);
 		size = 0;
+		unRoot = 0;
+		sqrtNum = 0.0;
 		op1 = NULL;
 		op2 = NULL;
 		op3 = NULL;
@@ -51,6 +55,15 @@ public:
 	void TestOfOpenmp(const int *dina, const int *dinb, int *dout, const int &size);
 	//SSE测试函数
 	void TestOfSSE(const float *op1, const float *op2, float *op3, const int &size);
+
+	//求平方根 仅保留整数位
+	unsigned int QuickSqrtUN(unsigned int unRoot);
+
+	// Carmack在QUAKE3中使用的计算平方根的函数
+	float QuickSqrtF(float sqrtNum);
+
+	//最精简的1/sqrt()函数,精度较高
+	float QuickInvSqrt(float sqrtNum);
 
 	~CMytest()
 	{

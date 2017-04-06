@@ -51,3 +51,55 @@ void CMytest::TestOfSSE(const float *op1,const float *op2, float *op3,const int 
 #endif
 
 }
+
+//求平方根 仅保留整数位
+unsigned int CMytest::QuickSqrtUN(unsigned int unRoot)
+{
+	unsigned int unSqrt = 0;
+	unsigned int unTemp;
+	unsigned int i;
+
+	for (i = 0x10000000; i != 0; i >>= 2)
+	{
+		unTemp = unSqrt + i;
+		unSqrt >>= 1;
+		if (unTemp <= unRoot)
+		{
+			unRoot -= unTemp;
+			unSqrt += i;
+		}
+	}
+	return unSqrt;
+}
+
+//
+// Carmack在QUAKE3中使用的计算平方根的函数
+//
+float CMytest::QuickSqrtF(float x)
+{
+	long i;
+	float xHalf, y;
+
+	xHalf = x*0.5f;
+	y = x;
+	i = *(long *)&y;							// get bits for floating VALUE
+	i = 0x5f3759df - (i >> 1);  //0x5f375a86		// gives initial guess y0
+	y = *(float *)&i;							// convert bits BACK to float
+	y = y * (1.5f - (xHalf*y*y));			// Newton step, repeating increases accuracy		1st iteration
+	//y  = y * ( f - ( xHalf * y * y ) );			// 2nd iteration, this can be removed
+	return x*y;
+}
+
+//最精简的1/sqrt()函数,精度较高
+float CMytest::QuickInvSqrt(float x)
+{
+	long i;
+	float xhalf, y;
+
+	xhalf = 0.5f*x;
+	i = *(long*)&x;
+	i = 0x5f375a86 - (i >> 1);
+	y = *(float*)&i;
+	y = y*(1.5f - xhalf*y*y);
+	return y;
+}
