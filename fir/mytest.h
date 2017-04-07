@@ -25,12 +25,12 @@ public:
 
 	CMytest()
 	{
-		dina = new int[N];
-		memset(dina,0,sizeof(int)*N);
-		dinb = new int[N];
-		memset(dinb, 0, sizeof(int)*N);
-		dout = new int[N];
-		memset(dout, 0, sizeof(int)*N);
+		dina = new int[SIZE_OF_ARRAY];
+		memset(dina,0,sizeof(int)*SIZE_OF_ARRAY);
+		dinb = new int[SIZE_OF_ARRAY];
+		memset(dinb, 0, sizeof(int)*SIZE_OF_ARRAY);
+		dout = new int[SIZE_OF_ARRAY];
+		memset(dout, 0, sizeof(int)*SIZE_OF_ARRAY);
 		size = 0;
 		unRoot = 0;
 		sqrtNum = 0.0;
