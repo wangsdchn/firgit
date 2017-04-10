@@ -1,5 +1,49 @@
 #include "mytest.h"
 
+CMytest::CMytest()
+{
+	dina = new int[SIZE_OF_ARRAY];
+	memset(dina, 0, sizeof(int)*SIZE_OF_ARRAY);
+	dinb = new int[SIZE_OF_ARRAY];
+	memset(dinb, 0, sizeof(int)*SIZE_OF_ARRAY);
+	dout = new int[SIZE_OF_ARRAY];
+	memset(dout, 0, sizeof(int)*SIZE_OF_ARRAY);
+	size = 0;
+	unRoot = 0;
+	sqrtNum = 0.0;
+	op1 = new float[SIZE_OF_ARRAY];
+	memset(dout, 0, sizeof(float)*SIZE_OF_ARRAY);
+	op2 = new float[SIZE_OF_ARRAY];
+	memset(dout, 0, sizeof(float)*SIZE_OF_ARRAY);
+	op3 = new float[SIZE_OF_ARRAY];
+	memset(dout, 0, sizeof(float)*SIZE_OF_ARRAY);
+}
+CMytest::CMytest(const CMytest &C)
+{
+	dina = new int[SIZE_OF_ARRAY];
+	memcpy(dina, C.dina, sizeof(int)*SIZE_OF_ARRAY);
+	dinb = new int[SIZE_OF_ARRAY];
+	memcpy(dinb, C.dinb, sizeof(int)*SIZE_OF_ARRAY);
+	dout = new int[SIZE_OF_ARRAY];
+	memcpy(dinb, C.dinb, sizeof(int)*SIZE_OF_ARRAY);
+	size = C.size;
+	op1 = new float[SIZE_OF_ARRAY];
+	memcpy(dinb, C.op1, sizeof(float)*SIZE_OF_ARRAY);
+	op2 = new float[SIZE_OF_ARRAY];
+	memcpy(dinb, C.op2, sizeof(float)*SIZE_OF_ARRAY);
+	op3 = new float[SIZE_OF_ARRAY];
+	memcpy(dinb, C.op1, sizeof(float)*SIZE_OF_ARRAY);
+}
+CMytest::~CMytest()
+{
+	if (dina) { delete[]dina; dina = NULL; }
+	if (dinb) { delete[]dinb; dinb = NULL; }
+	if (dout) { delete[]dout; dout = NULL; }
+	if (op1)  {	delete[]op1; op1 = NULL; }
+	if (op2)  { delete[]op2; op2 = NULL; }
+	if (op3)  { delete[]op3; op3 = NULL; }
+};
+
 void CMytest::TestOfOpenmp(const int *dina,const int *dinb,int *dout,const int &size){
 #ifdef USE_OPENMP
 #pragma omp parallel for

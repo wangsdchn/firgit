@@ -1,8 +1,6 @@
 #include "mytest.h"
 #include "add.h"
-#include "define.h"
 #include<time.h>
-#include<omp.h>
 #include<vector>
 #include <windows.h>
 

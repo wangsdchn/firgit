@@ -23,34 +23,8 @@ public:
 	float *op2;
 	float *op3;
 
-	CMytest()
-	{
-		dina = new int[SIZE_OF_ARRAY];
-		memset(dina,0,sizeof(int)*SIZE_OF_ARRAY);
-		dinb = new int[SIZE_OF_ARRAY];
-		memset(dinb, 0, sizeof(int)*SIZE_OF_ARRAY);
-		dout = new int[SIZE_OF_ARRAY];
-		memset(dout, 0, sizeof(int)*SIZE_OF_ARRAY);
-		size = 0;
-		unRoot = 0;
-		sqrtNum = 0.0;
-		op1 = NULL;
-		op2 = NULL;
-		op3 = NULL;
-	}
-	/*CMytest(const CMytest &C)
-	{
-		dina = new int;
-		*dina = *(C.dina);
-		dinb = new int;
-		*dinb = *(C.dinb);
-		dout = new int;
-		*dout = *(C.dout);
-		size = C.size;
-		op1 = C.op1;
-		op2 = C.op2;
-		op3 = C.op3;
-	}*/
+	CMytest();
+	CMytest(const CMytest &C);
 	//openMP测试函数
 	void TestOfOpenmp(const int *dina, const int *dinb, int *dout, const int &size);
 	//SSE测试函数
@@ -65,15 +39,7 @@ public:
 	//最精简的1/sqrt()函数,精度较高
 	float QuickInvSqrt(float sqrtNum);
 
-	~CMytest()
-	{
-		if (dina) { delete []dina; dina = NULL; }
-		if (dinb) { delete []dinb; dinb = NULL; }
-		if (dout) { delete []dout; dout = NULL; }
-		if (NULL != op1)  op1 = NULL;
-		if (NULL != op2)  op2 = NULL;
-		if (NULL != op3)  op3 = NULL;
-	};
+	~CMytest();
 };
 
 #endif
