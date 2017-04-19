@@ -1,0 +1,19 @@
+﻿生成启动时间为 2017/4/19 10:05:04。
+     1>项目“E:\wsd\firgit\fir\fir.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /openmp /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>main.cpp(20): warning C4101: “a”: 未引用的局部变量
+     1>main.cpp(21): warning C4101: “b”: 未引用的局部变量
+       Link:
+         C:\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\wsd\firgit\Release\fir.exe" /INCREMENTAL:NO /NOLOGO opencv_calib3d2410.lib opencv_contrib2410.lib opencv_core2410.lib opencv_features2d2410.lib opencv_flann2410.lib opencv_gpu2410.lib opencv_highgui2410.lib opencv_imgproc2410.lib opencv_legacy2410.lib opencv_ml2410.lib opencv_nonfree2410.lib opencv_objdetect2410.lib opencv_ocl2410.lib opencv_photo2410.lib opencv_stitching2410.lib opencv_superres2410.lib opencv_ts2410.lib opencv_video2410.lib opencv_videostab2410.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\wsd\firgit\Release\fir.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\wsd\firgit\Release\fir.lib" /MACHINE:X86 /SAFESEH Release\add.obj
+         Release\main.obj
+         Release\mytest.obj
+         正在生成代码
+         已完成代码的生成
+         fir.vcxproj -> E:\wsd\firgit\Release\fir.exe
+     1>已完成生成项目“E:\wsd\firgit\fir\fir.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.32

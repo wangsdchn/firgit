@@ -37,19 +37,19 @@ int main()
 	QueryPerformanceCounter(&m_StartTime);
 	for (int i = 0; i < 8; i++)
 	{
-		p[i] = new int[1280*1024*50];
+		p[i] = new int[1280*1024*10];
 	}
 	QueryPerformanceCounter(&m_EndTime);
 	cout <<(double)(m_EndTime.QuadPart-m_StartTime.QuadPart)/m_Freq.QuadPart << endl;
 
 	QueryPerformanceCounter(&m_StartTime);
-
+#pragma omp parallel num_threads(4)
 #ifdef USE_OPENMP
-#pragma omp parallel for
+#pragma omp parallel for num_threads(4)
 #endif
 	for (int i = 0; i < 8; i++)
 	{
-		memset(p[i], 0, 1280 * 1024*50*sizeof(int));
+		memset(p[i], 0, 1280 * 1024*10*sizeof(int));
 	}
 	QueryPerformanceCounter(&m_EndTime);
 	cout << (double)(m_EndTime.QuadPart - m_StartTime.QuadPart) / m_Freq.QuadPart << endl;
