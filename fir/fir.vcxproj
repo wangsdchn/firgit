@@ -157,6 +157,7 @@
   <ItemGroup>
     <ClInclude Include="add.h" />
     <ClInclude Include="define.h" />
+    <ClInclude Include="myKalman.h" />
     <ClInclude Include="mytest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
