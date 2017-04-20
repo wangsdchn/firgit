@@ -7,7 +7,7 @@
 #include <windows.h>
 
 using namespace std;
-
+void ch(int *p){ cout << *p << endl; int *p1; p1 = p; *p1 = 4; cout << *p << endl; };
 int main()
 {
 	LARGE_INTEGER m_StartTime;
@@ -17,7 +17,7 @@ int main()
 	CMytest test1;
 	test1.unRoot = 50;
 	test1.sqrtNum = 3.0;
-	int a;
+	int a = 1;
 	float b;
 	////======================================
 	//QueryPerformanceCounter(&m_StartTime);
@@ -32,27 +32,9 @@ int main()
 	//	b = 1/sqrtf(test1.sqrtNum);
 	//QueryPerformanceCounter(&m_EndTime);
 	//cout << b << " " << (double)(m_EndTime.QuadPart - m_StartTime.QuadPart) / m_Freq.QuadPart << endl;
-	int * p[8];
-
-	QueryPerformanceCounter(&m_StartTime);
-	for (int i = 0; i < 8; i++)
-	{
-		p[i] = new int[1280*1024*10];
-	}
-	QueryPerformanceCounter(&m_EndTime);
-	cout <<(double)(m_EndTime.QuadPart-m_StartTime.QuadPart)/m_Freq.QuadPart << endl;
-
-	QueryPerformanceCounter(&m_StartTime);
-#pragma omp parallel num_threads(4)
-#ifdef USE_OPENMP
-#pragma omp parallel for num_threads(4)
-#endif
-	for (int i = 0; i < 8; i++)
-	{
-		memset(p[i], 0, 1280 * 1024*10*sizeof(int));
-	}
-	QueryPerformanceCounter(&m_EndTime);
-	cout << (double)(m_EndTime.QuadPart - m_StartTime.QuadPart) / m_Freq.QuadPart << endl;
+	int *p=&a;
+	ch(p);
+	cout << a << endl;
 	system("pause");
 	return 0;
 }
