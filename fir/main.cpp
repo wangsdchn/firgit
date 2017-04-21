@@ -32,10 +32,9 @@ int main()
 	//	b = 1/sqrtf(test1.sqrtNum);
 	//QueryPerformanceCounter(&m_EndTime);
 	//cout << b << " " << (double)(m_EndTime.QuadPart - m_StartTime.QuadPart) / m_Freq.QuadPart << endl;
-	Mat src;
-	src = cv::imread("C:\\Users\\WSD\\Desktop\\1.jpg");
-	cv::imshow("ºìÍâ",src);
-	cv::waitKey(0);
+	int arr[6] = {1,2,3,4,5,6};
+	int *p = &arr[3];
+	cout << p[-1] << endl;
 	system("pause");
 	return 0;
 }
