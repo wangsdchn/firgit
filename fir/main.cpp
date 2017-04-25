@@ -5,7 +5,7 @@
 #include<time.h>
 #include<vector>
 #include <windows.h>
-
+using namespace cv;
 using namespace std;
 void ch(int *p){ cout << *p << endl; int *p1; p1 = p; *p1 = 4; cout << *p << endl; };
 int main()
@@ -32,9 +32,7 @@ int main()
 	//	b = 1/sqrtf(test1.sqrtNum);
 	//QueryPerformanceCounter(&m_EndTime);
 	//cout << b << " " << (double)(m_EndTime.QuadPart - m_StartTime.QuadPart) / m_Freq.QuadPart << endl;
-	int arr[6] = {1,2,3,4,5,6};
-	int *p = &arr[3];
-	cout << p[-1] << endl;
+	Mat src = imread("E:\\BIN.BMP",0);
 	system("pause");
 	return 0;
 }
