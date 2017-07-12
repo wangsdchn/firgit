@@ -39,6 +39,8 @@ public:
 	//最精简的1/sqrt()函数,精度较高
 	float QuickInvSqrt(float sqrtNum);
 
+
+
 	~CMytest();
 };
 

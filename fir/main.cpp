@@ -19,6 +19,7 @@ int main()
 	test1.sqrtNum = 3.0;
 	int a = 1;
 	float b;
+	cout<<add(a, a)<<endl;
 	////======================================
 	//QueryPerformanceCounter(&m_StartTime);
 	//for (int i = 0; i < 1000000; i++)
@@ -32,7 +33,7 @@ int main()
 	//	b = 1/sqrtf(test1.sqrtNum);
 	//QueryPerformanceCounter(&m_EndTime);
 	//cout << b << " " << (double)(m_EndTime.QuadPart - m_StartTime.QuadPart) / m_Freq.QuadPart << endl;
-	Mat src = imread("E:\\BIN.BMP",0);
-	system("pause");
+	//Mat src = imread("E:\\BIN.BMP",0);
+ 	system("pause");
 	return 0;
-}
+} 
