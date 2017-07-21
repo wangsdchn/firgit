@@ -24,6 +24,9 @@
     <ClCompile Include="mytest.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
+    <ClCompile Include="fileOps.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="add.h">
@@ -36,6 +39,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="myKalman.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="fileOps.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

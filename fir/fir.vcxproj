@@ -151,12 +151,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="add.c" />
+    <ClCompile Include="fileOps.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mytest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="add.h" />
     <ClInclude Include="define.h" />
+    <ClInclude Include="fileOps.h" />
     <ClInclude Include="myKalman.h" />
     <ClInclude Include="mytest.h" />
   </ItemGroup>
