@@ -5,7 +5,9 @@
 #include "fileOps.h"
 #include<time.h>
 #include<vector>
-#include <windows.h>
+//#include <windows.h>
+#define _AFXDLL
+#include <afxtempl.h>
 #include <assert.h>
 using namespace cv;
 using namespace std;
@@ -27,14 +29,12 @@ int main()
 	//float gamma = 1.25;
 	//FileOps::CFileOp file(gamma,fileName);
 	//file.getResult();
-	//	
-	char *p = new char[10];
-	memset(p, 0, 9*sizeof(char));
-	p[0] = 'a';
-	p[1] = 'a';
-	p[9] = '\0';
-	cout << strlen(p) << " " << sizeof(p) << endl;
-	sizeOfPtr(p);
+	CList<int, int&> CInt;
+	for (int i = 0; i < 10; i++)
+	{
+		CInt.AddTail(i);
+	}
+
 
 	system("pause");
 	return 0;
