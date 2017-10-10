@@ -29,12 +29,10 @@ int main()
 	//float gamma = 1.25;
 	//FileOps::CFileOp file(gamma,fileName);
 	//file.getResult();
-	CList<int, int&> CInt;
-	for (int i = 0; i < 10; i++)
-	{
-		CInt.AddTail(i);
-	}
-
+	int i = 10;
+	std::ostringstream s(std::ios::binary);
+	s << i << endl;
+	cout << s.str() << endl;
 
 	system("pause");
 	return 0;
