@@ -1,7 +1,6 @@
 
 #include<omp.h>
 #include "mytest.h"
-#include "add.h"
 #include "fileOps.h"
 #include<time.h>
 #include<vector>
@@ -11,6 +10,7 @@
 #include <assert.h>
 using namespace cv;
 using namespace std;
+typedef int(*AddDll)(int, int);
 void ch(int *p){ cout << *p << endl; int *p1; p1 = p; *p1 = 4; cout << *p << endl; };
 void allocateMemory()
 {
@@ -25,15 +25,28 @@ void sizeOfPtr(char *p)
 }
 int main()
 {
-	//string fileName = "E:\\gamma.txt";
-	//float gamma = 1.25;
-	//FileOps::CFileOp file(gamma,fileName);
-	//file.getResult();
-	int i = 10;
-	std::ostringstream s(std::ios::binary);
-	s << i << endl;
-	cout << s.str() << endl;
-
+	HINSTANCE hdll = LoadLibrary("..\\x64\\Debug\\addDll.dll");
+	if (hdll == NULL)
+	{
+		FreeLibrary(hdll);
+		return 1;
+	}
+	AddDll add = (AddDll)GetProcAddress(hdll, "add");
+	if (add == NULL)
+	{
+		FreeLibrary(hdll);
+		return 2;
+	}
+	while (true)
+	{
+		int a, b;
+		cout << "Pelease input two numbers:";
+		cin >> a >> b;
+		int c = add(a, b);
+		cout << "Add Result:" << c << endl;
+	}
+	if (hdll!=NULL)
+		FreeLibrary(hdll);
 	system("pause");
 	return 0;
 } 

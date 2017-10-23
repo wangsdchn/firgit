@@ -18,13 +18,13 @@
     <ClCompile Include="add.c">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
     <ClCompile Include="mytest.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
     <ClCompile Include="fileOps.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
   </ItemGroup>
