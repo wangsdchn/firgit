@@ -41,14 +41,8 @@ int main()
 		FreeLibrary(hdll);
 		return 2;
 	}
-	while (true)
-	{
-		int a, b;
-		cout << "Pelease input two numbers:";
-		cin >> a >> b;
-		int c = add(a, b);
-		cout << "Add Result:" << c << endl;
-	}
+	string str = "wsd";
+	str[0] = 's';
 	if (hdll!=NULL)
 		FreeLibrary(hdll);
 	system("pause");
