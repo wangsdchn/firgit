@@ -25,7 +25,11 @@ void sizeOfPtr(char *p)
 }
 int main()
 {
-	HINSTANCE hdll = LoadLibrary("..\\x64\\Debug\\addDll.dll");
+#ifdef _DEBUG
+	HINSTANCE hdll = LoadLibrary("../x64/Debug/addDll.dll");
+#else
+	HINSTANCE hdll = LoadLibrary("./addDll.dll");
+#endif
 	if (hdll == NULL)
 	{
 		FreeLibrary(hdll);
