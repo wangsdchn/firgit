@@ -27,6 +27,9 @@
     <ClCompile Include="main.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
+    <ClCompile Include="classification.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="add.h">
@@ -42,6 +45,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="fileOps.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="classification.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

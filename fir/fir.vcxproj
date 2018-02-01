@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -27,26 +27,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -75,12 +75,16 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>E:\wsd\caffe\scripts\build\include;E:\wsd\caffe\include;E:\wsd\caffe\src;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\wsd\caffe\scripts\build\lib\Debug;E:\wsd\caffe\scripts\build\lib\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <LibraryPath>C:\Anaconda3\libs;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\lib;E:\wsd\caffe\scripts\build\lib\Release;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\wsd\caffe\scripts\build;E:\wsd\caffe\scripts\build\include;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\include\boost-1_61;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\include;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\include\opencv;C:\Anaconda3\include;C:\Anaconda3\Lib\site-packages\numpy\core\include;E:\wsd\caffe\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -139,24 +143,28 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_CONSOLE;_LIB;BOOST_ALL_NO_LIB;USE_LMDB;USE_LEVELDB;CPU_ONLY=1;USE_OPENCV;WITH_PYTHON_LAYER;CAFFE_BUILDING_STATIC_LIB;CMAKE_WINDOWS_BUILD;CAFFE_VERSION=1.0.0;GLOG_NO_ABBREVIATED_SEVERITIES;GOOGLE_GLOG_DLL_DECL=__declspec(dllimport);GOOGLE_GLOG_DLL_DECL_FOR_UNITTESTS=__declspec(dllimport);H5_BUILT_AS_DYNAMIC_LIB=1;CMAKE_INTDIR="Release";NOMINMAX;WIN32_LEAN_AND_MEAN;NO_STRICT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>E:\wsd\caffe\scripts\build;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\include\boost-1_61;E:\wsd\caffe\scripts\build\include;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\include;C:\Anaconda3\Lib\site-packages\numpy\core\include;C:\Anaconda3\include;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\include\opencv;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;caffe.lib;python35.lib;caffeproto.lib;boost_system-vc140-mt-1_61.lib;boost_thread-vc140-mt-1_61.lib;boost_filesystem-vc140-mt-1_61.lib;boost_chrono-vc140-mt-1_61.lib;boost_date_time-vc140-mt-1_61.lib;boost_atomic-vc140-mt-1_61.lib;glog.lib;gflags.lib;shlwapi.lib;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\lib\libprotobuf.lib;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\lib\caffehdf5_hl.lib;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\lib\caffehdf5.lib;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\cmake\..\lib\caffezlib.lib;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\lib\lmdb.lib;ntdll.lib;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\lib\leveldb.lib;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\cmake\..\lib\boost_date_time-vc140-mt-1_61.lib;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\cmake\..\lib\boost_filesystem-vc140-mt-1_61.lib;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\cmake\..\lib\boost_system-vc140-mt-1_61.lib;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\lib\snappy_static.lib;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\lib\caffezlib.lib;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\x64\vc14\lib\opencv_highgui310.lib;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\x64\vc14\lib\opencv_imgcodecs310.lib;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\x64\vc14\lib\opencv_imgproc310.lib;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\x64\vc14\lib\opencv_core310.lib;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\lib\libopenblas.dll.a;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\lib\boost_python-vc140-mt-1_61.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="add.c" />
+    <ClCompile Include="classification.cpp" />
     <ClCompile Include="fileOps.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mytest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="add.h" />
+    <ClInclude Include="classification.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="fileOps.h" />
     <ClInclude Include="myKalman.h" />
