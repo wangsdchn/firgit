@@ -1,4 +1,4 @@
-﻿生成启动时间为 2017-11-1 6:39:41 PM。
+﻿生成启动时间为 2017-12-28 10:10:10 AM。
      1>项目“E:\wsd\firgit\fir\fir.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          C:\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt main.cpp
@@ -6,16 +6,22 @@
      1>C:\Microsoft Visual Studio 12.0\VC\atlmfc\include\afx.h(38): warning C4996: 'MBCS_Support_Deprecated_In_MFC': MBCS support in MFC is deprecated and may be removed in a future version of MFC.
                  C:\Microsoft Visual Studio 12.0\VC\atlmfc\include\afx.h(33) : 参见“MBCS_Support_Deprecated_In_MFC”的声明
          _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+     1>main.cpp(35): warning C4554: “&”: 检查运算符优先级可能存在的错误；使用圆括号阐明优先级
+     1>main.cpp(36): warning C4554: “>>”: 检查运算符优先级可能存在的错误；使用圆括号阐明优先级
+     1>main.cpp(42): warning C4554: “&”: 检查运算符优先级可能存在的错误；使用圆括号阐明优先级
+     1>main.cpp(43): warning C4554: “>>”: 检查运算符优先级可能存在的错误；使用圆括号阐明优先级
+     1>main.cpp(59): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+     1>main.cpp(80): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+     1>main.cpp(102): warning C4554: “&”: 检查运算符优先级可能存在的错误；使用圆括号阐明优先级
        Link:
          C:\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"E:\wsd\firgit\x64\Release\fir.exe" /INCREMENTAL:NO /NOLOGO opencv_calib3d2410.lib opencv_contrib2410.lib opencv_core2410.lib opencv_features2d2410.lib opencv_flann2410.lib opencv_gpu2410.lib opencv_highgui2410.lib opencv_imgproc2410.lib opencv_legacy2410.lib opencv_ml2410.lib opencv_nonfree2410.lib opencv_objdetect2410.lib opencv_ocl2410.lib opencv_photo2410.lib opencv_stitching2410.lib opencv_superres2410.lib opencv_ts2410.lib opencv_video2410.lib opencv_videostab2410.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\wsd\firgit\x64\Release\fir.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\wsd\firgit\x64\Release\fir.lib" /MACHINE:X64 x64\Release\add.obj
          x64\Release\fileOps.obj
          x64\Release\main.obj
          x64\Release\mytest.obj
          正在生成代码
-         已完成代码的生成
-         fir.vcxproj -> E:\wsd\firgit\x64\Release\fir.exe
-     1>已完成生成项目“E:\wsd\firgit\fir\fir.vcxproj”(Build 个目标)的操作。
+     1>LINK : fatal error LNK1257: 代码生成失败
+     1>已完成生成项目“E:\wsd\firgit\fir\fir.vcxproj”(Build 个目标)的操作 - 失败。
 
-生成成功。
+生成失败。
 
-已用时间 00:00:06.83
+已用时间 00:00:07.21
