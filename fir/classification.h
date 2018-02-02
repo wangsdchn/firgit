@@ -1,5 +1,9 @@
 #pragma once
 #include <caffe/caffe.hpp>
+#include <caffe/common.hpp>
+#include <caffe/layers/inner_product_layer.hpp>
+#include <caffe/layers/data_layer.hpp>
+#include <caffe/layers/input_layer.hpp>
 #ifdef USE_OPENCV
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -11,7 +15,11 @@
 #include <string>
 #include <utility>
 #include <vector>
-
+namespace caffe
+{
+	extern INSTANTIATE_CLASS(InputLayer);
+	extern INSTANTIATE_CLASS(InnerProductLayer);
+}
 #ifdef USE_OPENCV
 using namespace caffe;  // NOLINT(build/namespaces)
 using std::string;
