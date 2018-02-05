@@ -145,7 +145,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;_CONSOLE;_LIB;BOOST_ALL_NO_LIB;USE_LMDB;USE_LEVELDB;CPU_ONLY=1;USE_OPENCV;WITH_PYTHON_LAYER;CAFFE_BUILDING_STATIC_LIB;CMAKE_WINDOWS_BUILD;CAFFE_VERSION=1.0.0;GLOG_NO_ABBREVIATED_SEVERITIES;GOOGLE_GLOG_DLL_DECL=__declspec(dllimport);GOOGLE_GLOG_DLL_DECL_FOR_UNITTESTS=__declspec(dllimport);H5_BUILT_AS_DYNAMIC_LIB=1;CMAKE_INTDIR="Release";NOMINMAX;WIN32_LEAN_AND_MEAN;NO_STRICT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>E:\wsd\caffe\scripts\build;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\include\boost-1_61;E:\wsd\caffe\scripts\build\include;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\include;C:\Anaconda3\Lib\site-packages\numpy\core\include;C:\Anaconda3\include;C:\Users\WSD\.caffe\dependencies\libraries_v140_x64_py35_1.1.0\libraries\include\opencv;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

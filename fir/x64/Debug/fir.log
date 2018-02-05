@@ -1,9 +1,8 @@
-﻿  add.c
-  mytest.cpp
-  main.cpp
-e:\wsd\caffe\include\caffe\common.hpp(4): fatal error C1083: 无法打开包括文件: “boost/shared_ptr.hpp”: No such file or directory
-  fileOps.cpp
-e:\wsd\firgit\fir\fileops.cpp(17): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-  classification.cpp
-e:\wsd\caffe\include\caffe\common.hpp(4): fatal error C1083: 无法打开包括文件: “boost/shared_ptr.hpp”: No such file or directory
-  正在生成代码...
+﻿生成启动时间为 2018-2-5 9:29:54 AM。
+     1>项目“E:\wsd\firgit\fir\fir.vcxproj”在节点 2 上(Build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.Cpp.Platform.targets(64,5): error MSB8020: The build tools for v140 (Platform Toolset = 'v140') cannot be found. To build using the v140 build tools, please install v140 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Upgrade Solution...".
+     1>已完成生成项目“E:\wsd\firgit\fir\fir.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.03
