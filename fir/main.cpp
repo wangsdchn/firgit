@@ -11,12 +11,12 @@ int main()
 	::google::InitGoogleLogging(logfile.c_str());
 
 	string model_file = "lenet_train_test.prototxt";
-	string trained_file = "lenet_iter_10000.caffemodel";
+	string trained_file = "lenet_iter_15000.caffemodel";
 	string mean_file = "mean.binaryproto";
 	string label_file = "synset_words.txt";
 	Classifier classifier(model_file, trained_file, mean_file, label_file);
 
-	string file = "00_0051.jpg";
+	string file = "E://wsd//0003.jpg";
 
 	std::cout << "---------- Prediction for "
 		<< file << " ----------" << std::endl;
